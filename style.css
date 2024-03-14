@@ -1,0 +1,51 @@
+body {
+    background-color: #7469B6;
+}
+
+.fs-4 {
+    color: #E1AFD1;
+    font-size: 2rem !important;
+}
+.album {
+    background-color: #AD88C6 !important;
+}
+
+.nav-item {
+    --bs-nav-pills-link-active-bg: #E1AFD1;
+}
+
+.nav-link {
+    color: #E1AFD1;
+}
+
+.container-header {
+    text-align: center;
+}
+
+h1.header-text {
+    font-weight: bold;
+    font-size: 3rem;
+    color: #E1AFD1;
+}
+
+p.header-text {
+    font-size: 3rem;
+    color: #E1AFD1;
+}
+
+.carousel-inner {
+    height: 70vh;
+}
+
+.carousel-inner img {
+    height: 70vh !important;
+    margin: auto;
+}
+
+.carousel-caption h5 {
+    font-size: 2rem;
+}
+
+.carousel-caption p {
+    font-size: 1.4rem;
+}
