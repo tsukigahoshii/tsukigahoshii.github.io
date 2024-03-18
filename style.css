@@ -1,3 +1,4 @@
+
 body {
     background-color: #7469B6;
 }
@@ -24,12 +25,12 @@ body {
 
 h1.header-text {
     font-weight: bold;
-    font-size: 3rem;
+    font-size: 2rem;
     color: #E1AFD1;
 }
 
 p.header-text {
-    font-size: 3rem;
+    font-size: 1rem;
     color: #E1AFD1;
 }
 
