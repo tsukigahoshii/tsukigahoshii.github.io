@@ -47,11 +47,11 @@ function checkAnswer(currentLevel) {
         $("body").addClass("game-over").delay(200).queue(function(next) {
             $("body").removeClass("game-over").dequeue();
         });
-        $("h1").text("Game Over, Press Any Key to Restart");
         gameStarted = false;
         level = 0;
         gamePattern = [];
         userClickedPattern = [];
+        $("h1").text("Game Over, Press Any Key to Restart");
     }
 }
 
