@@ -1,0 +1,715 @@
+<!-- 
+    - about page 'silver' by skye southcodes.tumblr.com
+    - modify as you please but please do not touch the credit
+    - any errors? need help? have questions? let me know!
+    southcodes.tumblr.com/inbox
+    
+    - normalize css by https://github.com/necolas
+    - fonts by google
+    - icon font by http://fontawesome.io/icons/
+
+ -->
+ 
+ <!DOCTYPE html>
+ <html>
+ <head>
+     <title>tsukiiuna</title>
+     
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+     <link rel="shortcut icon" href="{favicon}">
+     <meta name="description" content="{MetaDescription}"/>
+ 
+     <!-- fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Karla:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+     
+     <!-- normalize -->
+     <link href="https://necolas.github.io/normalize.css/7.0.0/normalize.css" rel="stylesheet">
+     
+ <style>
+ :root {
+     --background:#fafafa;
+     --boxes-background:#fff;
+     --text:#333;
+     --links: #829fbb;
+     --links-hover: #36608c;
+     --borders:#eee;
+     --icons: #36608c;
+ }
+   
+ .tmblr-iframe {margin:.7rem;opacity:.6;-ms-transform: scale(0.85);-webkit-transform: scale(0.85); /* Safari */transform: scale(0.85);}
+ .tmblr-iframe:hover {opacity:.8;}
+ 
+ ::-webkit-scrollbar-thumb:vertical {border-left:2px solid var(--borders);}
+ ::-webkit-scrollbar {width:6px}
+ ::-webkit-scrollbar-track-piece{margin:5px 0;}
+ 
+ pre {font-family:consolas;
+     white-space: pre-wrap;       /* css-3 */
+     white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+     white-space: -pre-wrap;      /* Opera 4- */
+     white-space: -o-pre-wrap;    /* Opera 7 */
+     word-wrap: break-word;}      /* Internet Explorer 5.5+ */
+ 
+ body, figure{margin:0;padding:0}
+ html{font: 14px 'Karla', sans-serif;}
+ body {font-size:14px;color:var(--text);background:var(--background);}
+ a {text-decoration: none;color:var(--links);word-break:break-word;}
+ a:hover {color:var(--links-hover);}
+ blockquote {margin:0;padding:0;}
+ img {max-width:100%;height: auto;display: block;margin: .7rem 0}
+ hr {border:0;border-top:1px solid var(--borders);margin:0;}
+ 
+ * {
+     box-sizing: border-box;
+ }
+ 
+ .box-divider {
+     margin:2rem auto;
+     width: 10rem;
+ }
+ 
+ /* boxes */
+ 
+ #container {
+     display: flex;
+     justify-content: space-around;
+     flex-flow: row wrap;
+     background-color: var(--background);
+     max-width: 65rem;
+     margin:7rem auto
+ }
+ 
+ #links-box {
+     width: 28%;
+ }
+ #about-box {
+     width: 37%;
+ }
+ 
+ .box-inner {
+     background-color: var(--boxes-background);
+     padding:1rem;
+     border:1px solid var(--borders);
+     border-radius:5px;
+ }
+ 
+ /* navigation section */
+ 
+ #main-navigation {
+     list-style: none;
+     display: flex;
+     flex-flow: row wrap;
+     justify-content: space-around;
+     text-align: center;
+     margin-bottom: 1rem;
+ }
+ 
+ #main-navigation-responsive {
+     display: none;
+ }
+ 
+ #main-navigation li {
+     background-color: var(--boxes-background);
+     border: 1px solid var(--borders);
+     width:3rem;
+     height:3rem;
+     line-height: 3rem;
+     border-radius:5px;
+ }
+ 
+ #about-links, #about-tags {
+     margin-top: 2rem;
+     text-align: center;
+ }
+ 
+ #about-links li {
+     display: inline-block;
+     margin:1rem 0
+ }
+ 
+ #about-links span {
+     padding: .4rem;
+     background-color: var(--boxes-background);
+     border: 1px solid var(--borders);
+     border-radius: 3px;
+ }
+ 
+ #about-links li:after {
+     content: '\f111';
+     font-family: 'Font Awesome 5 Free';
+     font-weight: 900;
+     font-size: .2rem;
+     color:var(--icons);
+     vertical-align: middle;
+     margin:0 1rem
+ }
+ 
+ #about-links li:last-of-type:after {display: none;}
+ 
+ #about-tags li{
+     display: inline-block;
+     border: 1px solid var(--borders); 
+     border-radius: 3px;
+     padding: .4rem;
+     margin:0 .3rem 1rem;
+ }
+ 
+ #about-tags li:before {
+     content: '# ';
+     color:var(--icons)
+ }
+ 
+ /* blogs */
+ 
+ #blogs-wrapper {list-style: none;}
+ 
+ #blogs-wrapper li{
+     display: flex;
+     flex-flow: row wrap;
+     align-items:center;
+     justify-content: space-between;
+     margin: 1rem 0;
+     padding:0 .5rem;
+     transition-duration: .3s;
+ }
+ 
+ #blogs-wrapper li:hover{
+     background-color: var(--links);
+     border-radius: 5px;
+ }
+ 
+ .blog-image {
+     width:4.5rem;
+     height:4.5rem;
+     object-fit: cover;
+     padding: .5rem;
+     border: 1px solid var(--borders);
+     border-radius: 100%;
+     background-color: var(--boxes-background);
+ }
+ 
+ #blogs-wrapper .blogs-names{
+     width: calc(100% - 5.5rem);
+     font-family: 'Montserrat', sans-serif;
+     font-weight: 600;
+ }
+ 
+ .blogs-names {margin: 1rem 0;}
+ 
+ .blog-title {
+     display: block;
+     font:600 1rem 'Montserrat', sans-serif;
+     text-transform: uppercase;
+ }
+ 
+ .blog-subtitle {
+     display: block;
+     font:500 .85rem 'Montserrat', sans-serif;
+     font-style: italic;
+     margin-top: .5rem;
+ }
+ 
+ /* progress bars */
+ 
+ #progress-bars-wrapper {
+     padding: 0 1rem;
+ }
+ 
+ .progress-bar {
+     width: 100%;
+     height:10px;
+     background-color: var(--background);
+     position: relative;
+     text-align: right;
+     border-radius: 3px;
+     margin:0 0 3rem;
+ }
+ 
+ h3.progress-bar-name {
+     margin:0 0 1rem;
+     font:500 1rem 'Karla', sans-serif
+ }
+ 
+ .bar-filling {
+     position: absolute;top:0;bottom:0;left:0;
+     background-color: var(--links);
+     border-radius: 3px;
+ }
+ 
+ .bar-progress {
+     position: absolute;top:0;bottom:0;right:0;
+     z-index: 100000;
+     font-size: 1rem;
+     margin-top: -3px;
+     font:900 .9rem 'Montserrat', sans-serif
+ }
+ 
+ .current-progress {
+     font:600 .85rem 'Montserrat', sans-serif;
+     color:#888
+ }
+ 
+ /* socials */
+ 
+ #about-socials nav {
+     display: flex;
+     justify-content: space-around;
+     flex-flow: row wrap;
+     list-style: none;
+ }
+ 
+ #about-socials nav li {
+     margin:1rem;
+     font-size: 1.2rem;
+ }
+ 
+ /* about section */
+ 
+ /* about title subtitle */
+ #about-header {
+     display: flex;
+     flex-flow: row wrap;
+     justify-content: space-between;
+     align-items: center;
+     margin:1rem 0;
+     background-color: var(--background);
+     padding:1rem;
+     border:1px solid var(--borders);
+     border-radius:5px;
+ }
+ 
+ #page-title{
+     font:600 1.3rem 'Montserrat', sans-serif;
+     margin:.2rem 0;
+ }
+ 
+ #username {
+     font:400 1rem 'karla', sans-serif;
+     letter-spacing: .04rem;
+     margin: .2rem 0;
+     color: #666;
+ }
+ 
+ #about-subtitle {
+     font:400 .9rem 'karla', sans-serif;
+     font-style: italic;   
+     letter-spacing: .04rem;
+     width: 100%;
+     margin: 1.2rem 0 0;
+ }
+ 
+ /* about image */
+ 
+ .about-image {
+     width: 100%;
+     margin:2rem 0 0;
+     padding:0;
+     height: 100%;
+     object-fit: cover;
+     border-radius:5px;
+ }
+ 
+ /* about info */
+ 
+ #about-info {
+     margin-top: 2rem;
+     font-size: 1rem;
+     text-align: center;
+ }
+ 
+ #about-info li{
+     list-style: none;
+     display: inline-block;
+     margin:.5rem 0
+ }
+ 
+ #about-info li:after{
+     content: '\f111';
+     font-family: 'Font Awesome 5 Free';
+     font-weight: 900;
+     margin:0 1rem;
+     font-size: .4rem;
+     color: var(--icons);
+     vertical-align: middle;
+ }
+ 
+ #about-info li:last-of-type:after{
+     content: '';
+     display:none;
+ }
+ 
+ #about-text {
+     background-color: var(--background);
+     padding:1rem;
+     border:1px solid var(--borders);
+ }
+ 
+ /* likes and dislikes */
+ 
+ #likes-dislikes {
+     line-height: 175%;
+     padding: 0 1rem;
+     font-style: italic;
+ }
+ 
+ #likes-dislikes div {margin:1.5rem 0;}
+ 
+ #likes-dislikes li{
+     list-style: none;
+     margin:0 1rem 0 0;
+     display: inline-block;
+ }
+ 
+ #likes-dislikes li::after{
+     content:'';
+     display: none;
+ }
+ 
+ #likes-dislikes .fa-solid {
+     font-size: 1.2rem;
+     vertical-align: middle;
+     margin-right: 1rem;
+ }
+ 
+ /* gallery */
+ 
+ #gallery .box-inner {
+     background-color: transparent;
+     padding:0;
+     border:0;
+     border-radius:0;
+ }
+ 
+ .gallery-image {
+     height: 8rem;
+     width: 8rem;
+     object-fit: cover;
+     border:10px solid var(--boxes-background);
+     outline: 1px solid #eee;
+     margin:0 0  2rem 0;
+     border-radius:5px;
+ }
+ 
+ 
+ /* MEDIA */
+ 
+ @media only screen and (min-width:00px) and (max-width:700px) {
+ 
+     #main-navigation {display: none;}
+ 
+     #main-navigation-responsive {
+         display: block;
+         list-style: none;
+         display: flex;
+         flex-flow: row wrap;
+         justify-content: space-around;
+         text-align: center;
+         margin-bottom: 1rem;
+     }
+ 
+     #main-navigation-responsive li {
+         background-color: var(--boxes-background);
+         border: 1px solid var(--borders);
+         width:3rem;
+         height:3rem;
+         line-height: 3rem;
+         border-radius:5px;
+     }
+ 
+     #container {
+         display: flex;
+         justify-content: center;
+         flex-flow: column;
+         background-color: var(--background);
+         max-width: 65rem;
+         width: 90vw;
+         margin:7rem auto
+     }
+ 
+     #links-box {
+         width: 100%;
+         margin:5rem auto 2rem;
+         order: 2;
+ 
+     }
+     #about-box {
+         width: 100%;
+         margin:auto;
+         order: 1;
+     }
+ 
+     #gallery {
+         order: 3;
+     }
+     
+     #gallery {
+         background-color: transparent;
+         padding:0;
+         border:0;
+         border-radius:0;
+         display: flex;
+         flex-flow: row wrap;
+         margin: 3rem auto;
+         justify-content: space-between;
+         width: 90vw;
+         max-width: 30rem;
+     }
+ 
+     .gallery-image {
+         height: 6rem;
+         width: 6rem;
+         object-fit: cover;
+         border:10px solid var(--boxes-background);
+         outline: 1px solid #eee;
+         margin:0 0  2rem 0;
+         border-radius:5px;
+     }
+ 
+ }
+ 
+ </style>
+ </head>
+ <body>
+ 
+ <main id="container">
+ 
+ <!-- responsive main navigation start -->
+ <nav id="main-navigation-responsive">
+ 
+     <li><a href="/"><i class="fa-solid fa-home"></i></a></li>
+     
+     <li><a href="/ask"><i class="fa-solid fa-envelope"></i></a></li>
+     
+     <li><a target="_blank" href="https://www.tumblr.com/follow/{name}"><i class="fa-solid fa-plus"></i></a></li>
+ 
+ </nav>
+ <!-- responsive main navigation end -->
+ 
+ <!-- navigations section start -->
+ <section id="links-box" class="container-box">
+ 
+     <!-- main navigation start -->
+     <nav id="main-navigation">
+     
+         <li><a href="/"><i class="fa-solid fa-home"></i></a></li>
+     
+         <li><a href="/ask"><i class="fa-solid fa-envelope"></i></a></li>
+     
+         <li><a target="_blank" href="https://www.tumblr.com/follow/{name}"><i class="fa-solid fa-plus"></i></a></li>
+     
+     </nav>
+     <!-- main navigation end -->
+ 
+     <div class="box-inner">
+ 
+         <!-- links -->
+     <article id="about-links">
+         <li><a href=""><span>link 1</span></a></li>
+         <li><a href=""><span>link 2</span></a></li>
+         <li><a href=""><span>link 3</span></a></li>
+     </article>
+ 
+         <!-- tags -->
+     <article id="about-tags">
+         <li><a href="">tag 1</a></li>
+         <li><a href="">tag 2</a></li>
+         <li><a href="">tag 3</a></li>
+     </article>
+ 
+ 
+     <hr class="box-divider">
+ 
+ 
+     <!-- progres bars start -->
+     <article id="progress-bars-wrapper">
+ 
+ 
+         <!-- bar start -->
+         <h3 class="progress-bar-name">progress bar name</h3>
+         
+         <!-- change the 50% to fill the bar -->
+         <div class="progress-bar">
+             <div class="bar-filling" style="width:50%"></div>
+             <div class="bar-progress">
+                 <span class="current-progress">50</span> / 100%
+             </div>
+         </div>
+         <!-- bar end -->
+ 
+ 
+ 
+         <!-- bar start -->
+         <h3 class="progress-bar-name">progress bar name</h3>
+         
+         <!-- change the 50% to fill the bar -->
+         <div class="progress-bar">
+             <div class="bar-filling" style="width:50%"></div>
+             <div class="bar-progress">
+                 <span class="current-progress">50</span> / 100%
+             </div>
+         </div>
+         <!-- bar end -->
+ 
+ 
+     </article>
+     <!-- progres bars end -->
+ 
+     
+     <hr class="box-divider">
+ 
+ 
+     <!-- blogs start -->
+     <article id="blogs-wrapper">
+         
+         
+         <!-- blog start -->
+         <a href="BLOG LINK" target="_blank"><li><img src="../images/takusan.png" alt="" class="blog-image">
+ 
+             <div class="blogs-names">
+                 <!-- blog name -->
+                 <span class="blog-title">tsukiiuna</span>
+                 <!-- blog subtitle -->
+                 <span class="blog-subtitle">main blog</span>
+             </div>
+ 
+         </li></a>
+         <!-- blog end -->
+ 
+         
+         
+         <!-- blog start -->
+         <a href="BLOG LINK" target="_blank"><li><img src="../images/eye-am-tsukiiuna.jpg" alt="" class="blog-image">
+ 
+             <div class="blogs-names">
+                 <!-- blog name -->
+                 <span class="blog-title">eye-am-tsukiiuna</span>
+                 <!-- blog subtitle -->
+                 <span class="blog-subtitle">TMA sideblog</span>
+             </div>
+ 
+         </li></a>
+         <!-- blog end -->
+ 
+ 
+ 
+     </article>
+     <!-- blogs end -->
+     
+     <hr class="box-divider">
+ 
+     <!-- socials start -->
+     <article id="about-socials">
+         <!-- find more icons at http://fontawesome.io/icons/ -->
+ 
+         <nav>
+             <li><a href="https://twitter.com/jessiename"><i class="fa-brands fa-twitter"></i></a></li>
+         </nav>
+ 
+     </article>
+     <!-- socials end -->
+ 
+ </div></section>
+ <!-- navigations section end -->
+ 
+ 
+ 
+ <!-- about section start -->
+ <section id="about-box" class="container-box"><div class="box-inner">
+         
+ 
+     <!-- title username subtitle start -->
+     <div id="about-header">
+         
+         <h1 id="page-title">tsukiiuna</h1>
+         
+         <h2 id="username">@jessiename</h2>
+         
+         <h3 id="about-subtitle">this is where a description of me would go.</h3>
+         
+     </div>
+     <!-- title username subtitle end -->
+ 
+ 
+     <!-- about image start -->
+     <figure class="about-image"><img class="about-image" src="../images/eyes.png" alt=""></figure>
+     <!-- about image end -->
+ 
+ 
+     <!-- info start -->
+     <article id="about-info">
+         <li>jessie</li>
+         <li>24</li>
+         <li>they/her</li>
+         <li>US</li>
+     </article>
+     <!-- info end -->
+ 
+     <hr class="box-divider">
+ 
+     <!-- about start -->
+     <article id="about-text">
+ 
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit repudiandae quasi dolor eveniet laborum pariatur repellendus eius quis. Magni veniam sed unde iste illo recusandae expedita dolore, nesciunt eveniet adipisci.</p>
+ 
+     </article>
+     <!-- about end-->
+ 
+     <hr class="box-divider">
+ 
+     <!-- likes/dislikes start -->
+     <article id="likes-dislikes">
+ 
+         <div>
+             <i class="fa-solid fa-circle-check" style="color:green"></i>
+             <li>Hermitcraft</li>
+             <li>TMA</li>
+             <li>Haikyuu</li>
+         </div>
+ 
+         <!-- <div>
+             <i class="fa-solid fa-circle-xmark" style="red"></i>
+             <li>dislike 1</li>
+             <li>dislike 2</li>
+             <li>dislike 3</li>
+         </div> -->
+ 
+         
+     
+     </article>
+     <!-- likes/dislikes end -->
+ 
+ </div></section>
+ <!-- about section start -->
+ 
+ 
+ <!-- gallery section start -->
+ <section id="gallery" class="container-box">
+     
+ <img src="GALLERY IMAGE" alt="" class="gallery-image">
+ 
+ 
+ <img src="GALLERY IMAGE" alt="" class="gallery-image">
+ 
+ 
+ <img src="GALLERY IMAGE" alt="" class="gallery-image">
+ 
+ 
+ <img src="GALLERY IMAGE" alt="" class="gallery-image">
+ 
+ 
+ </section>
+ <!-- gallery section end -->
+ 
+ </main>
+ 
+ <!-- do not touch -->
+ <div style="position:fixed;bottom:2rem;right:2rem;z-index:999999999999999999999!important;font-size:.7rem;letter-spacing:.03rem;"><a href="https://southcodes.tumblr.com" title="coded by southcodes" target="_blank">SC</a></div>
+ 
+ <!-- icons font -->
+ <script src="https://kit.fontawesome.com/0993e30c04.js" crossorigin="anonymous"></script>
+ 
+ </body>
+ </html>
