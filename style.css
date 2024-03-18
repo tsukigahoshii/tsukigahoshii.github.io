@@ -1,22 +1,22 @@
 
 body {
-    background-color: #7469B6;
+    background-color: #fff;
 }
 
 .fs-4 {
-    color: #E1AFD1;
+    color: #829fbb;
     font-size: 2rem !important;
 }
 .album {
-    background-color: #AD88C6 !important;
+    background-color: #fafafa !important;
 }
 
 .nav-item {
-    --bs-nav-pills-link-active-bg: #E1AFD1;
+    --bs-nav-pills-link-active-bg: #829fbb;
 }
 
 .nav-link {
-    color: #E1AFD1;
+    color: #333;
 }
 
 .container-header {
@@ -26,12 +26,12 @@ body {
 h1.header-text {
     font-weight: bold;
     font-size: 2rem;
-    color: #E1AFD1;
+    color: #829fbb;
 }
 
 p.header-text {
     font-size: 1rem;
-    color: #E1AFD1;
+    color: #829fbb;
 }
 
 .carousel-inner {
@@ -49,4 +49,9 @@ p.header-text {
 
 .carousel-caption p {
     font-size: 1.4rem;
+}
+
+.dropdown-toggle {
+    background-color: #829fbb;
+    color: #fff;
 }
