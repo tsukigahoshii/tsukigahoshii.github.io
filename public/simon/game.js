@@ -48,6 +48,7 @@ function checkAnswer(currentLevel) {
         });
         $("h1").text("Game Over, Press Any Key to Restart");
         gameStarted = false;
+        level = 0;
         gamePattern = [];
         userClickedPattern = [];
     }
