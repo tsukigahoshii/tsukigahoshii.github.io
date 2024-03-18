@@ -6,6 +6,7 @@ var level = 0;
 $(document).keypress(function(event) {
 
     if (gameStarted == false) {
+        level = 0;
         nextSequence();
         
     } else {
